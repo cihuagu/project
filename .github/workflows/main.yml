@@ -1,0 +1,40 @@
+            - 名称：Rust 缓存
+  您可以锁定到特定的提交或版本。
+  # 用途：Swatinem/rust-cache@c19371144df3bb44fab255c43d04cbc2ab54d1c4
+  使用版本：Swatinem/rust-cache@v2.9.1
+  和：
+    # 前缀缓存键，可以更改此键以手动启动新的缓存。
+    前缀键：# 可选，默认为 v0-rust
+    # 用作缓存键，代替自动的基于 `job` 的键，并且在多个作业中保持稳定。
+    共享密钥：# 可选
+    # 除自动基于“作业”的缓存键外，还会添加一个额外的缓存键，可用于进一步区分作业。
+    键：# 可选
+    # 是否应将基于作业的自动缓存键包含作业 ID。默认为 true。
+    add-job-id-key: # 可选，默认为 true
+    # 是否将 Rust 环境的哈希值包含在缓存键中。这包括所有 Cargo.toml/Cargo.lock 文件、rust-toolchain 文件和 .cargo/config.toml 文件（如果存在）的哈希值，以及指定的“env-vars”。默认为 true。
+    add-rust-environment-hash-key: # 可选，默认为 true
+    # 要包含在缓存键中的其他环境变量，以空格分隔。
+    环境变量：# 可选
+    # 多个 Cargo 工作区及其目标目录的路径，以换行符分隔。
+    工作区：# 可选
+    # 要缓存的其他非工作区目录，以换行符分隔。
+    缓存目录：# 可选
+    # 确定是否缓存工作区目标。如果为 `false`，则仅缓存 cargo 注册表。
+    cache-targets: # 可选，默认为 true
+    # 即使构建失败也进行缓存。默认为 false。
+    失败时缓存：# 可选
+    # 确定要缓存哪些 crate。如果为 `true`，则所有 crate 都将被缓存；否则，仅缓存依赖 crate。
+    cache-all-crates: # 可选，默认为 false
+    # 与 cache-all-crates 类似。如果设置为 `true`，则会缓存工作区 crate。
+    cache-workspace-crates: # 可选，默认为 false
+    # 决定是否保存缓存。如果为 `false`，则仅恢复缓存。
+    save-if: # 可选，默认为 true
+    # 确定使用哪个缓存提供程序。选项包括 github、buildjet 或 warpbuild。默认为 github。
+    cache-provider: # 可选，默认为 GitHub
+    # 确定是否缓存 ${CARGO_HOME}/bin。
+    cache-bin: # 可选，默认为 true
+    # 检查缓存条目是否存在，而不下载缓存
+    仅查找：# 可选，默认为 false
+    # 用于格式化要运行的命令的格式字符串，例如 `rustc` 和 `cargo`。
+    cmd-format: # 可选，默认值为 {0}
+          
